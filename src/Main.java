@@ -4,14 +4,12 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
-    //region Vars
+
     static ArrayList<Good> products = new ArrayList<>();
     static ArrayList<Good> otchet = new ArrayList<>();
     static ArrayList<Good> zapas = new ArrayList<>();
     static ArrayList<Integer> kolichestvo = new ArrayList<>();
-    //endregion
 
-    //region Main
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(" ************************************** \n" +
@@ -118,7 +116,7 @@ public class Main {
                 "2. Consumer\n" +
                 "0. Exit\n");
     }
-    //endregion
+
 }
 //    private static void addKorzinaga(Scanner scanner) {
 //        if (products.size() > 0){
