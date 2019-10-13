@@ -80,23 +80,6 @@ public class Main {
                                 System.out.println();
                                 customer.showKorzina();
 
-                                System.out.print("\n1. Buy product" +
-                                        "\n2. Delete product iz spiska" +
-                                        "\n0. Exit\n");
-                                System.out.print("Enter index iz spiska: ");
-                                int numm = scanner.nextInt();
-                                System.out.print("\n");
-                                switch (numm) {
-                                    case 1:
-                                        customer.buyProductIzKorzini(scanner);
-                                        System.out.println("Uspeshno kupleno");
-                                        break;
-                                    case 2:
-                                        customer.deleteProductIzKorzini(scanner);
-                                        break;
-                                    case 0:
-                                        break;
-                                }
                                 break;
                         }
                         customer.showConsumerMenu();

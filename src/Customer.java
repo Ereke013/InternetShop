@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Customer implements CustomerMenu{
 
+    Scanner scanner = new Scanner(System.in);
+
     @Override
     public void showConsumerMenu() { //TODO MENU 1 and 3 Show and View
         System.out.println("\n1. Show all products \n" +
@@ -18,8 +20,13 @@ public class Customer implements CustomerMenu{
     @Override
     public void showAllProducts() {
         System.out.print("\n");
-        for (int i = 0; i < Main.products.size(); i++) {
-            System.out.println(i + 1 + ". " + Main.products.get(i));
+        if(Main.products.size() == 0){
+            System.out.println("НЕТУ ПРОДУКТА!!!!");
+        }
+        else {
+            for (int i = 0; i < Main.products.size(); i++) {
+                System.out.println(i + 1 + ". " + Main.products.get(i));
+            }
         }
     }
 
@@ -76,6 +83,23 @@ public class Customer implements CustomerMenu{
                 } else {
                     System.out.println(i + 1 + "." + Main.zapas.get(i).getModel() + ", kolichestvo: " + Main.kolichestvo.get(i) + " " + Main.zapas.get(i).getPrice() + "$");
                 }
+                System.out.print("\n1. Buy product" +
+                        "\n2. Delete product iz spiska" +
+                        "\n0. Exit\n");
+                System.out.print("Enter index iz spiska: ");
+                int numm = scanner.nextInt();
+                System.out.print("\n");
+                switch (numm) {
+                    case 1:
+                        buyProductIzKorzini(scanner);
+                        System.out.println("Uspeshno kupleno");
+                        break;
+                    case 2:
+                        deleteProductIzKorzini(scanner);
+                        break;
+                    case 0:
+                        break;
+                }
             }
             System.out.println();
         } else {
@@ -83,7 +107,7 @@ public class Customer implements CustomerMenu{
         }
     }
 
-    void deleteProductIzKorzini(Scanner scanner) {
+    private void deleteProductIzKorzini(Scanner scanner) {
         if (Main.zapas.size() > 0) {
             showKorzina();
             System.out.print("\nEnter stroka dlya remove: ");
@@ -95,7 +119,7 @@ public class Customer implements CustomerMenu{
         }
     }
 
-    void buyProductIzKorzini(Scanner scanner) {
+    private void buyProductIzKorzini(Scanner scanner) {
         if (Main.zapas.size() > 0) {
             System.out.print("Enter product index: ");
             int position = scanner.nextInt() - 1;
