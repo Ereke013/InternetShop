@@ -16,6 +16,11 @@ public class Computer extends Device {
 
     public void setMemory(int memory) {
         this.memory = memory;
+        if(getActualPrice() == 0){
+            //TODO TRUE
+        }else{
+            //TODO FALSE
+        }
     }
 
     @Override
@@ -32,6 +37,7 @@ public class Computer extends Device {
                 ", cpu = '" + cpu + '\'' +
                 ", ram = " + ram +
                 ", count = " + getCount() +
-                '}' + " price = " + getPrice()+ "$";
+                '}' + " price = " + getActualPrice()+ "$"+
+                (getPrice() == getActualPrice() ? "" : ", discount 20% => " + getPrice())+ "$";
     }
 }

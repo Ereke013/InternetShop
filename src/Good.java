@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
-public abstract class Good {
+public abstract class Good implements Discount {
     private double price;
+    private double actualPrice;
     private String model;
     private int count = 3;
     private int sold;
@@ -80,5 +81,18 @@ public abstract class Good {
 
     public Good getGood(int index){
         return gds.get(index);
+    }
+
+    public double getActualPrice() {
+        return actualPrice;
+    }
+
+    public void setActualPrice(double actualPrice) {
+        this.actualPrice = actualPrice;
+    }
+
+    @Override
+    public void add20Discount() {
+        setPrice(getPrice()*0.8);
     }
 }

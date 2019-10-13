@@ -46,4 +46,5 @@ public class Wearing extends Good {
                 ", name='" + name + '\'' +
                 '}';
     }
+
 }

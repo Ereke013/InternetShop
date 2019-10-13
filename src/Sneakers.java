@@ -18,6 +18,7 @@ public class Sneakers extends Wearing {
                 ", color = " + getColor() +
                 ", season = '" + season + '\'' +
                 ", count = "+ getCount() +
-                '}' + " price = " + getPrice() + "$";
+                '}' + " price = " + getActualPrice()+ "$"+
+                (getPrice() == getActualPrice() ? "" : ", discount 20% => " + getPrice())+ "$";
     }
 }

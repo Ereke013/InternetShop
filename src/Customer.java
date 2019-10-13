@@ -123,17 +123,25 @@ public class Customer implements CustomerMenu{
         if (Main.zapas.size() > 0) {
             System.out.print("Enter product index: ");
             int position = scanner.nextInt() - 1;
+
             System.out.print("\nEnter kolichestvo etogo produkta: ");
             int kolich = scanner.nextInt();
+
             Good product = Main.products.get(position);
             product.setSold(product.getSold() + kolich);
             product.setCount(product.getCount() - kolich);
+            product.add20Discount();
+
             Main.otchet.add(product);
+
             Main.zapas.remove(product);
+
             if (product.getCount() == 0) {
                 Main.products.remove(position);
             }
-        } else {
+        }
+
+        else {
             System.out.println("Корзина пустой!!");
         }
     }

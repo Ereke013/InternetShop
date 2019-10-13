@@ -31,6 +31,8 @@ public class SmartPhone extends Device {
                 ", mgpx = " + mgpx +
                 ", ram = " + ram +
                 ", count = " + getCount() +
-                '}' + " price = " + getPrice()+ "$";
+                '}' + " price = " + getActualPrice()+ "$"+
+                (getPrice() == getActualPrice() ? "" : ", discount 20% => " + getPrice())+ "$";
     }
+
 }

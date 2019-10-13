@@ -10,7 +10,6 @@ public class Tshirt extends  Wearing{
     }
 
 
-
     @Override
     public String toString() {
         return "Tshirt{" +
@@ -20,6 +19,7 @@ public class Tshirt extends  Wearing{
                 ", color = " + getColor()+
                 ", material = '" + material + '\'' +
                 ", kolichestvo = "+ getCount() +
-                '}' + "Price = " + getPrice() + "$";
+                '}' + "Price = " + getActualPrice()+ "$"+
+                (getPrice() == getActualPrice() ? "" : ", discount 20% => " + getPrice())+ "$";
     }
 }

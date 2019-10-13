@@ -28,6 +28,7 @@ public class Laptop extends Computer{
                 ", cpu = '" + cpu + '\'' +
                 ", ram = " + ram +'\''+
                 ", count = " + getCount() +
-                '}' + " price = " + getPrice()+ "$";
+                '}' + " price = " + getActualPrice()+ "$"+
+                (getPrice() == getActualPrice() ? "" : ", discount 20% => " + getPrice())+ "$";
     }
 }

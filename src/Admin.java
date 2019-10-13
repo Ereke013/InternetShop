@@ -59,6 +59,13 @@ public class Admin implements AdminMenu {
                 System.out.print("\nEnter price: ");
                 int price = scanner.nextInt();
                 smartPhone.setPrice(price);
+                smartPhone.setActualPrice(price);
+
+                System.out.print("\nDo you make product 20% discount?\n1.Yes\n2.No\n");
+                int tnd = scanner.nextInt();
+                if(tnd == 1){
+                    smartPhone.add20Discount();
+                }
 
                 Main.products.add(smartPhone);
                 //}
@@ -103,6 +110,13 @@ public class Admin implements AdminMenu {
                 System.out.print("\nEnter price: ");
                 int price = scanner.nextInt();
                 computer.setPrice(price);
+                computer.setActualPrice(price);
+
+                System.out.print("\nDo you make product 20% discount?\n1.Yes\n2.No\n");
+                int tnd = scanner.nextInt();
+                if(tnd == 1){
+                    computer.add20Discount();
+                }
 
                 Main.products.add(computer);
                 // }
@@ -144,6 +158,7 @@ public class Admin implements AdminMenu {
 
                 System.out.print("\nEnter price: ");
                 int price = scanner.nextInt();
+                laptop.setActualPrice(price);
                 laptop.setPrice(price);
 
                 System.out.print("\nEnter weight: ");
@@ -153,6 +168,12 @@ public class Admin implements AdminMenu {
                 System.out.print("\nEnter touch(true or false): ");
                 boolean touch = scanner.nextBoolean();
                 laptop.setTouch(touch);
+
+                System.out.print("\nDo you make product 20% discount?\n1.Yes\n2.No\n");
+                int tnd = scanner.nextInt();
+                if(tnd == 1){
+                    laptop.add20Discount();
+                }
 
                 Main.products.add(laptop);
                 // }
@@ -187,7 +208,15 @@ public class Admin implements AdminMenu {
 
                 System.out.print("\nEnter price: ");
                 int price = scanner.nextInt();
+                sn.setActualPrice(price);
+
                 sn.setPrice(price);
+
+                System.out.print("\nDo you make product 20% discount?\n1.Yes\n2.No\n");
+                int tnd = scanner.nextInt();
+                if(tnd == 1){
+                    sn.add20Discount();
+                }
 
                 Main.products.add(sn);
                 break;
@@ -221,7 +250,14 @@ public class Admin implements AdminMenu {
 
                 System.out.print("\nEnter price: ");
                 int price = scanner.nextInt();
+                tsh.setActualPrice(price);
                 tsh.setPrice(price);
+
+                System.out.print("\nDo you make product 20% discount?\n1.Yes\n2.No\n");
+                int tnd = scanner.nextInt();
+                if(tnd == 1){
+                    tsh.add20Discount();
+                }
 
                 Main.products.add(tsh);
             }
